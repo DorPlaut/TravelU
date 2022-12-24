@@ -1,0 +1,158 @@
+.posts-container {
+  max-width: 60rem;
+}
+.post {
+  // @include defineWidth(40rem);
+  .alert {
+    margin-top: 1rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+.post-details-container {
+  @include flexCenter(row);
+
+  justify-content: space-between;
+  img {
+    width: 3.2rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  span {
+    font-size: 0.8rem;
+  }
+}
+.post-details {
+  @include flexCenter(row);
+}
+.post-location {
+  text-align: center;
+  margin: 0.5rem;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  span {
+    text-align: left;
+    background: var(--primaryColorBright);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: $borderRadius;
+
+    border: 1px solid var(--shadowColorNegative);
+  }
+}
+.post-content {
+  p {
+    width: 100%;
+  }
+  img {
+    margin-top: 0.5rem;
+  }
+}
+.comments-header {
+  @include flexCenter(row);
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+.comment {
+  // overflow: break-word;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: $borderRadius;
+  position: relative;
+  background: var(--primaryColorBright);
+
+  border: 1px solid var(--shadowColorNegative);
+  @include flexCenter(row);
+  justify-content: left;
+  img {
+    position: absolute;
+    width: 3rem;
+    top: 0.3rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+  }
+  span {
+    font-weight: bold;
+  }
+}
+.comment-content {
+  width: calc(100vw - 14rem);
+  max-width: 93%;
+  margin-left: 3.5rem;
+}
+.post-btn-container {
+  @include flexCenter(row);
+  button {
+    margin: 0.5rem 0.5rem -0.5rem 0.5rem;
+    width: 30%;
+  }
+}
+
+.post-menu {
+  padding: 2rem 0 0 0;
+  background: var(--backGroundColor);
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 0 $borderRadius 0 $borderRadius;
+  box-shadow: $containerShadow;
+  li {
+    margin: 0.5rem;
+  }
+}
+.post-menu-container {
+  position: relative;
+}
+
+.post-options-btn {
+  margin-top: -2.5rem;
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.comment-form {
+  @include flexCenter(row);
+  position: relative;
+  button {
+    width: 10%;
+  }
+}
+
+.image-gallery-thumbnail,
+.image-gallery-image,
+.image-gallery-thumbnail-image {
+  border-radius: $borderRadius;
+}
+
+// map
+.pin {
+  position: relative;
+  bottom: 3rem;
+  right: 1rem;
+  font-size: 2rem;
+}
+
+.sort-posts-menu-container {
+  // text-align: center;
+
+  ul {
+    @include flexCenter(row);
+  }
+  li {
+    margin: 0 1rem;
+  }
+}
+.filter-posts-menu {
+  margin-top: 1rem;
+}
+
+.sort-posts-menu {
+  margin-top: 1rem;
+}

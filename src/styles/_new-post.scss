@@ -1,0 +1,68 @@
+.write-post-container {
+  @include flexCenter(column);
+  background: rgba($color: #000000, $alpha: 0.5);
+  position: fixed;
+  z-index: 4;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+}
+input,
+textarea {
+  border: none;
+  // margin: 0.1rem;
+  border-radius: 30px;
+  color: black;
+  background: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  &:active {
+    stroke: none;
+  }
+}
+
+.post-form-container {
+  position: absolute;
+  top: 0;
+  margin-top: 6rem;
+  @include flexCenter(row);
+  @include defineWidth(50rem);
+  .post-img {
+    width: 60%;
+  }
+  .post-content {
+    @include flexCenter(column);
+  }
+  .post-location {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    @include mobile {
+      grid-template-columns: auto auto;
+    }
+  }
+  .post-form {
+    width: 100%;
+  }
+  // input,
+  // textarea {
+  //   border: none;
+  //   // margin: 0.1rem;
+  //   border-radius: $borderRadius;
+  //   color: var(--primaryColor);
+  //   background: var(--backGroundColor);
+  //   font-family: 'Roboto Mono', monospace;
+  //   font-size: 1rem;
+  //   padding: 0.5rem;
+  // }
+  input {
+    width: 100%;
+    max-width: 19ch;
+  }
+  textarea {
+    width: 100%;
+    // @include mobile {
+    //   width: auto;
+    // }
+    resize: vertical;
+  }
+}

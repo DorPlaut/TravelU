@@ -1,0 +1,82 @@
+.header {
+  width: 100vw;
+  height: 110vh;
+  top: 0;
+  position: relative;
+  overflow: hidden;
+  animation: fade 0.5s linear forwards;
+  // animation-delay: 0s;
+  opacity: 0;
+}
+
+.logo-container {
+  @include fadeAnimations(1s, 0.5s);
+  width: 100%;
+  height: 60%;
+  position: fixed;
+  z-index: 1;
+  transition: 2s;
+}
+
+.trees {
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+
+  img {
+    position: relative;
+    bottom: -5rem;
+    @include mobile {
+      bottom: -23rem;
+    }
+  }
+}
+.threes-dark {
+  filter: brightness(30%);
+}
+.header-underline {
+  z-index: 2;
+  background: linear-gradient(
+    0deg,
+    var(--backGroundColor) 10%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  width: 100vw;
+  height: 10rem;
+  position: absolute;
+  bottom: 0rem;
+}
+.image {
+  @include largeScreen {
+    width: 100vw;
+  }
+}
+.header-userbox {
+  @include fadeAnimations(1s, 1.5s);
+  @include flexCenter(row);
+  position: absolute;
+  width: 100vw;
+  top: 35rem;
+  z-index: 2;
+  color: var(--primaryColor);
+}
+
+.start-btn {
+  animation: 2s float ease-in-out infinite;
+  font-size: 2rem;
+  // height: 10rem;
+  // width: 10rem;
+  &:last-child {
+    filter: drop-shadow(0 0 0.4rem var(--primaryColor));
+  }
+  color: var(--seconderyColor);
+  .loged-user {
+    color: var(--seconderyColor);
+  }
+  border: 2px solid var(--seconderyColor);
+  // background: var(--shadowColor);
+  @include flexCenter(column);
+  &:hover {
+    background: var(--primaryColor);
+  }
+}

@@ -1,0 +1,89 @@
+.navbar-container {
+  position: fixed;
+  width: 100vw;
+  z-index: 4;
+  height: 4rem;
+  top: 0;
+  background: var(--primaryColorBright);
+  @include flexCenter(row);
+  box-shadow: $containerShadow;
+  .container {
+    position: absolute;
+  }
+}
+
+.navbar-logo {
+  z-index: 3;
+  position: absolute;
+  width: 100vw;
+  top: -9rem;
+  transform: scale(0.25);
+}
+.nav-logo-background {
+  z-index: 3;
+  position: absolute;
+  top: -4px;
+  width: 6rem;
+  height: 5.5rem;
+  background: var(--backGroundColor);
+  box-shadow: $containerShadow;
+  border-radius: $borderRadius;
+}
+
+.navbar-links-container {
+  margin: 1rem;
+  @include flexCenter(row);
+  justify-content: right;
+  width: 100%;
+}
+.navbar-navlinks {
+  ul {
+    justify-content: space-between;
+    @include flexCenter(row);
+  }
+  li {
+    margin: 0.5rem;
+    span {
+      margin-right: 0.2rem;
+    }
+  }
+}
+.user-menu-container {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+}
+.user-menu {
+  background: var(--backGroundColor);
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 0 0 0 $borderRadius;
+  box-shadow: $containerShadow;
+  li {
+    margin: 0.5rem;
+  }
+  width: 15rem;
+}
+
+// MOBILE
+.menu-btn {
+  font-size: 2rem;
+  width: 100%;
+}
+.mobile-nav {
+  position: absolute;
+  right: -1rem;
+  top: 3rem;
+  ul {
+    margin-top: 1rem;
+    @include flexCenter(column);
+  }
+  li {
+    margin: 0.5rem;
+  }
+  button {
+    text-align: left;
+    width: 15rem;
+  }
+}

@@ -1,0 +1,81 @@
+// VARIABLS
+:root {
+  --primaryColor: #124d06;
+  --seconderyColor: #e5f5e6;
+  --primaryColorBright: #f1fff1;
+  --backGroundColor: #d8e2d7;
+  --shadowColor: rgba(255, 255, 255, 0.7);
+  --shadowColorNegative: rgba(0, 0, 0, 0.2);
+  --containerBackground: #e5f5e6;
+}
+
+$borderRadius: 6px;
+$containerShadow: 1px 1px 0 2px var(--shadowColorNegative);
+
+// MIXIN
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+@mixin flexCenterFullPage($direction) {
+  @include flexCenter($direction);
+  height: 100vh;
+  width: 100vw;
+}
+@mixin defineWidth($maxWidth) {
+  width: calc(100vw - 5rem);
+  max-width: $maxWidth;
+}
+@mixin fadeAnimations($duration, $delay) {
+  animation: fade $duration linear forwards;
+  animation-delay: $delay;
+  opacity: 0;
+}
+
+// Media Quarrys
+@mixin extraLargeScreen {
+  @media screen and(min-width:'3000px') {
+    @content;
+  }
+}
+@mixin largeScreen {
+  @media screen and(min-width:'2000px') {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and(max-width:'800px') {
+    @content;
+  }
+}
+
+// ANIMATIONS
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0rem);
+  }
+  50% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

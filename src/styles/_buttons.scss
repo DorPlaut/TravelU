@@ -1,0 +1,64 @@
+.btn {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: none;
+  border-radius: $borderRadius;
+  color: var(--primaryColor);
+  border: 1.5px solid var(--primaryColor);
+  transition: 0.2s;
+  &:hover {
+    background: var(--primaryColorBright);
+  }
+  &:active {
+    color: var(--backGroundColor);
+    background: var(--primaryColor);
+  }
+}
+
+.light-dark-mode-btn-container {
+  @include fadeAnimations(1s, 1.5s);
+
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 4;
+  button {
+    font-size: 3rem;
+
+    &:focus {
+      animation: spin 1s;
+    }
+  }
+}
+
+.icon-btn {
+  color: var(--primaryColor);
+  cursor: pointer;
+  @include flexCenter(column);
+  background: none;
+  border: none;
+  transition: 0.2s;
+  // &:hover {
+  //   color: var(--primaryColorBright);
+  // }
+}
+
+.selected {
+  background: var(--primaryColor);
+  color: var(--backGroundColor);
+}
+
+.link {
+  transition: 0.2s;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primaryColor);
+  &:hover {
+    color: var(--primaryColorBright);
+  }
+}
+.link-selected {
+  text-decoration: underline;
+}
