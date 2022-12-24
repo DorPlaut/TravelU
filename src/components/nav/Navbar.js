@@ -12,7 +12,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function Navbar() {
   // auth0
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user } = useAuth0();
   // redux
   const dispacth = useDispatch();
   const isMobile = useSelector((state) => state.isMobile.value);

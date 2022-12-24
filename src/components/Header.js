@@ -22,17 +22,17 @@ function Header() {
   // logo visability
 
   // make sure user loged in
-  useEffect(() => {
-    if (!isAuthenticated && !isLoading) {
-      handleRedirectCallback()
-        .then((res) => {
-          console.log('logd in successfully');
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  });
+  // useEffect(() => {
+  //   if (!isAuthenticated && !isLoading) {
+  //     handleRedirectCallback()
+  //       .then((res) => {
+  //         console.log('logd in successfully');
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   }
+  // });
 
   return (
     <>
@@ -84,6 +84,9 @@ function Header() {
           <div className=" header-underline"></div>
         </div>
       </header>
+      <div className="invisible">
+        <User />
+      </div>
       <div id="page-start"></div>
     </>
   );

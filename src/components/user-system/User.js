@@ -67,11 +67,9 @@ const User = () => {
 
         if (response.data.isDarkMode) {
           dispacth(flipMode(true));
-          console.log('darkmode');
         }
         if (!response.data.isDarkMode) {
           dispacth(flipMode(false));
-          console.log('lightmode');
         }
       });
       setLoadUser(false);
@@ -82,17 +80,17 @@ const User = () => {
 
   // authenticate
 
-  useEffect(() => {
-    if (!isAuthenticated && !isLoading) {
-      handleRedirectCallback()
-        .then((res) => {
-          console.log('logd in successfully');
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  });
+  // useEffect(() => {
+  //   if (!isAuthenticated && !isLoading) {
+  //     handleRedirectCallback()
+  //       .then((res) => {
+  //         console.log('logd in successfully');
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   }
+  // });
   useEffect(() => {
     if (isAuthenticated && user) {
       postUser()
@@ -112,24 +110,18 @@ const User = () => {
   return (
     <div className="user-profile">
       {fullUser ? (
-        <>
-          {user ? (
-            <div className="loged-user">
-              <img src={profilePic} alt="img" referrerPolicy="no-referrer" />
-              {fullName}
-            </div>
-          ) : (
-            <div>
-              <span>
-                <BsPersonFill />
-              </span>
-              <Login />
-            </div>
-          )}{' '}
-        </>
+        <div className="loged-user">
+          <img src={profilePic} alt="img" referrerPolicy="no-referrer" />
+          {fullName}
+        </div>
       ) : (
-        'loading...'
-      )}
+        <div>
+          <span>
+            <BsPersonFill />
+          </span>
+          <Login />
+        </div>
+      )}{' '}
     </div>
   );
 };
