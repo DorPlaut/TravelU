@@ -56,9 +56,9 @@ function App() {
       {isWritePost ? <WritePost /> : ''}
 
       {isHomePage ? '' : <Navbar />}
-      <ParallaxProvider>
-        <Header />
-      </ParallaxProvider>
+      {/* <ParallaxProvider> */}
+      <Header />
+      {/* </ParallaxProvider> */}
       <div className="page">
         <BrightnesseBtn />
         {fullUser ? (
