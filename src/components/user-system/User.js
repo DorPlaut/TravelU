@@ -55,10 +55,7 @@ const User = () => {
 
   // get user
   const getUser = async () => {
-    const url = process.env.REACT_APP_SERVER_URL;
-
-    dispacth(setIsLoading(true));
-
+    // dispacth(setIsLoading(true));
     if (user) {
       try {
         await axios
