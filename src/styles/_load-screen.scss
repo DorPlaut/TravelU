@@ -1,0 +1,36 @@
+.load-screen {
+  text-align: center;
+  @include flexCenter(column);
+
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  font-size: 3rem;
+  color: var(--primaryColor);
+  z-index: 5;
+  background: var(--shadowColor);
+}
+.load-screen-massage {
+  animation: fade 1s linear forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+.load-container {
+  @include flexCenter(column);
+  border-radius: $borderRadius;
+  padding: 2rem;
+  transition: 0.5s;
+  animation: fade 0.5s linear forwards;
+  opacity: 0;
+}
+.thanks {
+  animation: fade 1s linear forwards;
+  animation-delay: 4s;
+  opacity: 0;
+  margin-bottom: -10rem;
+  p {
+    margin-bottom: -4rem;
+  }
+  @include flexCenter(column);
+}

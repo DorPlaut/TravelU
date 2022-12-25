@@ -10,6 +10,7 @@ import {
   FaDollarSign,
   FaCampground,
   FaCarSide,
+  FaRegArrowAltCircleRight,
 } from 'react-icons/fa';
 import { BsImageAlt } from 'react-icons/bs';
 import InputEmoji from 'react-input-emoji';
@@ -269,9 +270,8 @@ function Post({ post }) {
                   // onEnter={(event) => handleSubmitComment(event)}
                   placeholder={comment}
                 />
-
-                <button className="btn" type="submit">
-                  Send
+                <button className="" type="submit">
+                  <FaRegArrowAltCircleRight />
                 </button>
               </form>
             </>

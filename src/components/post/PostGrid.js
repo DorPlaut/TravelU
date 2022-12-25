@@ -8,9 +8,11 @@ import axios from 'axios';
 import Post from './Post';
 import FullProfile from '../user-system/FullProfile';
 import SortPostsMenu from './SortPostsMenu';
+import LoadScreen from '../LoadScreen';
 
 function PostGrid() {
   // redux
+  const isLoadingServer = useSelector((state) => state.isLoadingServer.value);
   const isUserProfile = useSelector((state) => state.isUserProfile.value);
   const allPosts = useSelector((state) => state.allPosts.value);
   const isPageUpdate = useSelector((state) => state.isPageUpdate.value);
@@ -33,6 +35,7 @@ function PostGrid() {
 
   return (
     <>
+      {isLoadingServer ? <LoadScreen /> : ''}
       {isUserProfile ? (
         <FullProfile />
       ) : (

@@ -10,10 +10,12 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUser } from '../../redux/userSlice';
 import { flipMode } from '../../redux/darkmodeSlice';
+import { setIsLoading } from '../../redux/isLoadingSlice';
 
 const User = () => {
   // redux
   const dispacth = useDispatch();
+  const isLoadingServer = useSelector((state) => state.isLoadingServer.value);
   // const fullUser = useSelector((state) => state.fullUser.value);
   const isPageUpdate = useSelector((state) => state.isPageUpdate.value);
   const fullUser = useSelector((state) => state.fullUser.value);
@@ -53,6 +55,9 @@ const User = () => {
   // get user
   const getUser = async () => {
     const url = process.env.REACT_APP_SERVER_URL;
+
+    dispacth(setIsLoading(true));
+
     if (user) {
       try {
         await axios
@@ -69,7 +74,7 @@ const User = () => {
               dispacth(flipMode(false));
             }
           });
-        setLoadUser(false);
+        dispacth(setIsLoading(false));
       } catch (err) {
         console.log(err);
       }
@@ -93,21 +98,23 @@ const User = () => {
   }, [isPageUpdate]);
 
   return (
-    <div className="user-profile">
-      {fullUser ? (
-        <div className="loged-user">
-          <img src={profilePic} alt="img" referrerPolicy="no-referrer" />
-          {fullName}
-        </div>
-      ) : (
-        <div>
-          <span>
-            <BsPersonFill />
-          </span>
-          <Login />
-        </div>
-      )}{' '}
-    </div>
+    <>
+      <div className="user-profile">
+        {fullUser ? (
+          <div className="loged-user">
+            <img src={profilePic} alt="img" referrerPolicy="no-referrer" />
+            {fullName}
+          </div>
+        ) : (
+          <div>
+            <span>
+              <BsPersonFill />
+            </span>
+            <Login />
+          </div>
+        )}{' '}
+      </div>
+    </>
   );
 };
 

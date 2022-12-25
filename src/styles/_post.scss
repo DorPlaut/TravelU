@@ -91,7 +91,7 @@
   @include flexCenter(row);
   button {
     margin: 0.5rem 0.5rem -0.5rem 0.5rem;
-    width: 30%;
+    width: 50%;
   }
 }
 
@@ -121,7 +121,14 @@
   @include flexCenter(row);
   position: relative;
   button {
-    width: 10%;
+    @include flexCenter(row);
+    cursor: pointer;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: rgb(141, 141, 141);
+    // width: 10%;
   }
 }
 

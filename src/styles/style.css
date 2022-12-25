@@ -353,7 +353,7 @@
 }
 .post-btn-container button {
   margin: 0.5rem 0.5rem -0.5rem 0.5rem;
-  width: 30%;
+  width: 50%;
 }
 
 .post-menu {
@@ -387,7 +387,16 @@
   position: relative;
 }
 .comment-form button {
-  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: rgb(141, 141, 141);
 }
 
 .image-gallery-thumbnail,
@@ -743,6 +752,59 @@ textarea:active {
   margin-top: 1rem;
   width: 100%;
   margin-bottom: 0.5rem;
+}
+
+.load-screen {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  font-size: 3rem;
+  color: var(--primaryColor);
+  z-index: 5;
+  background: var(--shadowColor);
+}
+
+.load-screen-massage {
+  -webkit-animation: fade 1s linear forwards;
+          animation: fade 1s linear forwards;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  opacity: 0;
+}
+
+.load-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 6px;
+  padding: 2rem;
+  transition: 0.5s;
+  -webkit-animation: fade 0.5s linear forwards;
+          animation: fade 0.5s linear forwards;
+  opacity: 0;
+}
+
+.thanks {
+  -webkit-animation: fade 1s linear forwards;
+          animation: fade 1s linear forwards;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  opacity: 0;
+  margin-bottom: -10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.thanks p {
+  margin-bottom: -4rem;
 }
 
 .image-gallery-icon {

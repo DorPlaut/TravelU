@@ -8,6 +8,7 @@ import isUserProfile from './userProfileSlice';
 import fullUser from './userSlice';
 import allPosts from './postsSlice';
 import isPageUpdate from './updateSlice';
+import isLoadingServer from './isLoadingSlice';
 
 export const store = configureStore({
   reducer: {
@@ -20,5 +21,6 @@ export const store = configureStore({
     fullUser: fullUser,
     allPosts: allPosts,
     isPageUpdate: isPageUpdate,
+    isLoadingServer: isLoadingServer,
   },
 });
