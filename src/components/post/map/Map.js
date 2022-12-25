@@ -1,7 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import LocationPin from './LocationPin';
-// import { Wrapper, Status } from '@googlemaps/react-wrapper';
 
 function Map({ mapLocayion, locationName }) {
   const defaultProps = {

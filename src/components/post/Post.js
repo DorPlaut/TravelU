@@ -209,10 +209,10 @@ function Post({ post }) {
             <FaDollarSign /> :{locationDetails.price}
           </span>
         </div>
-        <Map
+        {/* <Map
           mapLocayion={locationDetails.mapLocation}
           locationName={locationDetails.locationName}
-        />
+        /> */}
         <br />
         <div className="post-content">
           <p>{postContent}</p>

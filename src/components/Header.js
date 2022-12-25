@@ -25,30 +25,30 @@ function Header() {
         <div>
           {isHomePage ? (
             <div className="logo-container">
-              {/* <Parallax opacity={[15, 0]}> */}
-              <Logo />
-              {/* </Parallax> */}
+              <Parallax opacity={[15, 0]}>
+                <Logo />
+              </Parallax>
             </div>
           ) : (
             ''
           )}
-          {/* <Parallax speed={-40}> */}
-          <div className="">
-            <img
-              src={isDarkMode ? './sky-night.jpg' : './sky-day.jpg'}
-              alt=""
-              className="image sky"
-            />
-          </div>
-          {/* </Parallax> */}
+          <Parallax speed={-40}>
+            <div className="">
+              <img
+                src={isDarkMode ? './sky-night.jpg' : './sky-day.jpg'}
+                alt=""
+                className="image sky"
+              />
+            </div>
+          </Parallax>
           <div className="trees">
-            {/* <Parallax speed={-5}> */}
-            <img
-              src="./trees2.png"
-              alt=""
-              className={isDarkMode ? 'threes-dark image' : 'image'}
-            />
-            {/* </Parallax> */}
+            <Parallax speed={-5}>
+              <img
+                src="./trees2.png"
+                alt=""
+                className={isDarkMode ? 'threes-dark image' : 'image'}
+              />
+            </Parallax>
           </div>
           <div className="header-userbox">
             <div className={fullUser ? 'user-box' : 'user-box invisible'}>
