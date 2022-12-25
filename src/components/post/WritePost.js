@@ -141,7 +141,7 @@ function WritePost() {
             <span className="single-input">
               <BsImageAlt /> :{' '}
               <input
-                maxlength="30"
+                maxLength="30"
                 type="text"
                 name="location-name"
                 placeholder={locationName}
@@ -154,7 +154,7 @@ function WritePost() {
             <span className="single-input">
               <FaCloudSun /> :{' '}
               <input
-                maxlength="30"
+                maxLength="30"
                 type="text"
                 name="environment-type"
                 placeholder={environmentType}
@@ -167,7 +167,7 @@ function WritePost() {
             <span className="single-input">
               <FaCarSide /> :{' '}
               <input
-                maxlength="30"
+                maxLength="30"
                 type="text"
                 name="access-by-car"
                 placeholder={accessByCar}
@@ -180,7 +180,7 @@ function WritePost() {
             <span className="single-input">
               <FaHiking /> :{' '}
               <input
-                maxlength="30"
+                maxLength="30"
                 type="text"
                 name="hiking-trails"
                 placeholder={hikingTrails}
@@ -193,7 +193,7 @@ function WritePost() {
             <span className="single-input">
               <FaCampground /> :{' '}
               <input
-                maxlength="30"
+                maxLength="30"
                 type="text"
                 name="sleeping-options"
                 placeholder={sleepingOptions}
@@ -206,7 +206,7 @@ function WritePost() {
             <span className="single-input">
               <FaDollarSign /> :{' '}
               <input
-                maxlength="30"
+                maxLength="30"
                 type="text"
                 name="entry-fee"
                 placeholder={entryFee}
@@ -220,6 +220,7 @@ function WritePost() {
             <span className="single-input">
               <FaMapMarkedAlt /> :{' '}
               <Autocomplete
+                apiKey={process.env.REACT_APP_GOOGLE_KEY}
                 onPlaceSelected={(place) => {
                   setMapLocation({
                     lat: place.geometry.location.lat(),

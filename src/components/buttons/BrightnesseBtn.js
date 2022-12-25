@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
 import { updatePage } from '../../redux/updateSlice';
+import { flipMode } from '../../redux/darkmodeSlice';
 // Npm papackages
 import { BsFillSunFill, BsFillMoonStarsFill } from 'react-icons/bs';
 import axios from 'axios';
@@ -13,35 +14,39 @@ function BrightnesseBtn() {
   const { user, getAccessTokenSilently } = useAuth0();
   // redux
   const darkMode = useSelector((state) => state.isDarkMode.value);
+  const fullUser = useSelector((state) => state.fullUser.value);
   const dispacth = useDispatch();
   // set user prefernece
   const url = process.env.REACT_APP_SERVER_URL;
 
   const changeViewMode = async () => {
-    try {
-      const token = await getAccessTokenSilently();
-      await axios
-        .put(
-          `${url}/api/v1/user/darkMode`,
-          {
-            userId: user.sub,
-            isDarkMode: !darkMode,
-          },
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        )
-        .then((response) => {
-          dispacth(updatePage());
-        });
-    } catch (err) {
-      console.log(err);
+    if (user) {
+      try {
+        const token = await getAccessTokenSilently();
+        await axios
+          .put(
+            `${url}/api/v1/user/darkMode`,
+            {
+              userId: user.sub,
+              isDarkMode: !darkMode,
+            },
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          )
+          .then((response) => {
+            dispacth(updatePage());
+          });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    if (!user) {
+      dispacth(flipMode(!darkMode));
+      dispacth(updatePage());
     }
   };
-
-  //
-
-  useEffect(() => {
+  const setColorScheme = () => {
     if (darkMode) {
       document.documentElement.style.setProperty('--primaryColor', '#d6f8ff');
       document.documentElement.style.setProperty('--seconderyColor', '#d6f8ff');
@@ -90,6 +95,12 @@ function BrightnesseBtn() {
         '#e5f5e6'
       );
     }
+  };
+
+  //
+
+  useEffect(() => {
+    setColorScheme();
   }, [darkMode]);
   return (
     <div className="light-dark-mode-btn-container">

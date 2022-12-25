@@ -144,6 +144,23 @@
   opacity: 0;
 }
 
+.user-box {
+  font-size: 1.5rem;
+  position: relative;
+  top: -10rem;
+  display: flex;
+}
+.user-box img {
+  display: none;
+}
+.user-box span {
+  margin-right: 0.3rem;
+}
+
+.invisible {
+  opacity: 0;
+}
+
 .logo-container {
   -webkit-animation: fade 1s linear forwards;
           animation: fade 1s linear forwards;
@@ -200,7 +217,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   position: absolute;
   width: 100vw;
   top: 35rem;
@@ -1187,14 +1204,6 @@ a {
 
 ul {
   list-style: none;
-}
-
-.invisible {
-  position: absolute;
-  z-index: 5;
-  top: 0;
-  right: 0;
-  opacity: 100;
 }
 
 .logo {

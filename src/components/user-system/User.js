@@ -23,13 +23,7 @@ const User = () => {
   const [fullName, setFullName] = useState('');
 
   // auth0
-  const {
-    user,
-    isAuthenticated,
-    isLoading,
-    handleRedirectCallback,
-    getAccessTokenSilently,
-  } = useAuth0();
+  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
 
   // Post user to the server
   const url = process.env.REACT_APP_SERVER_URL;
@@ -59,38 +53,29 @@ const User = () => {
   // get user
   const getUser = async () => {
     const url = process.env.REACT_APP_SERVER_URL;
-    try {
-      await axios.get(`${url}/api/v1/user?id=${user.sub}`).then((response) => {
-        dispacth(setUser(response.data));
-        setProfilePicutre(response.data.profilePic);
-        setFullName(response.data.fullName);
+    if (user) {
+      try {
+        await axios
+          .get(`${url}/api/v1/user?id=${user.sub}`)
+          .then((response) => {
+            dispacth(setUser(response.data));
+            setProfilePicutre(response.data.profilePic);
+            setFullName(response.data.fullName);
 
-        if (response.data.isDarkMode) {
-          dispacth(flipMode(true));
-        }
-        if (!response.data.isDarkMode) {
-          dispacth(flipMode(false));
-        }
-      });
-      setLoadUser(false);
-    } catch (err) {
-      console.log(err);
+            if (response.data.isDarkMode) {
+              dispacth(flipMode(true));
+            }
+            if (!response.data.isDarkMode) {
+              dispacth(flipMode(false));
+            }
+          });
+        setLoadUser(false);
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
-  // authenticate
-
-  // useEffect(() => {
-  //   if (!isAuthenticated && !isLoading) {
-  //     handleRedirectCallback()
-  //       .then((res) => {
-  //         console.log('logd in successfully');
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }
-  // });
   useEffect(() => {
     if (isAuthenticated && user) {
       postUser()

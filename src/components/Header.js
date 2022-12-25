@@ -19,21 +19,6 @@ function Header() {
   const isHomePage = useSelector((state) => state.isHomePage.value);
   const fullUser = useSelector((state) => state.fullUser.value);
 
-  // logo visability
-
-  // make sure user loged in
-  // useEffect(() => {
-  //   if (!isAuthenticated && !isLoading) {
-  //     handleRedirectCallback()
-  //       .then((res) => {
-  //         console.log('logd in successfully');
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }
-  // });
-
   return (
     <>
       <header className="header" id="top">
@@ -66,27 +51,19 @@ function Header() {
             </Parallax>
           </div>
           <div className="header-userbox">
+            <div className={fullUser ? 'user-box' : 'user-box invisible'}>
+              <span>Welcome</span> <User />
+            </div>
             <a href="#page-start">
               <button className="start-btn btn ">
-                {fullUser ? (
-                  <>
-                    <User />
-                    <BsChevronDoubleDown />
-                  </>
-                ) : (
-                  <>
-                    Lets Start <BsChevronDoubleDown />
-                  </>
-                )}
+                Lets Start <BsChevronDoubleDown />
               </button>
             </a>
           </div>
           <div className=" header-underline"></div>
         </div>
       </header>
-      <div className="invisible">
-        <User />
-      </div>
+
       <div id="page-start"></div>
     </>
   );
