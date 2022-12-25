@@ -13,10 +13,10 @@ function LoadScreen() {
         <div className="load-screen-massage">
           <p>
             This project is currently hosted on a free server. <br /> First time
-            Load may take a minute or two.
+            load may take a minute or two.
           </p>
           <div className="thanks">
-            <p>Thank you for your patients.</p>
+            <p>Thank you for your patience.</p>
             <ClimbingBoxLoader size={25} color={color} />
           </div>
         </div>
