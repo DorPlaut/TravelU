@@ -30,6 +30,8 @@ const User = () => {
   // Post user to the server
   const url = process.env.REACT_APP_SERVER_URL;
   const postUser = async () => {
+    dispacth(setIsLoading(true));
+
     try {
       const token = await getAccessTokenSilently();
       axios.post(
@@ -56,7 +58,7 @@ const User = () => {
   const getUser = async () => {
     const url = process.env.REACT_APP_SERVER_URL;
 
-    dispacth(setIsLoading(true));
+    // dispacth(setIsLoading(true));
 
     if (user) {
       try {
