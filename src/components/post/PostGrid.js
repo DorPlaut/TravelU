@@ -46,8 +46,8 @@ function PostGrid() {
             </div>
           </div>
           <div className="posts-container">
-            {allPosts.map((i) => {
-              return <Post key={i._id} post={i} />;
+            {allPosts.map((i, index) => {
+              return <Post key={index} post={i} />;
             })}
           </div>
         </div>
