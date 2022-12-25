@@ -1,8 +1,5 @@
+Live Demo - [Click here](https://travel-u.netlify.app/) | Backend API service [Travel U Api](https://github.com/DorPlaut/TravelU-Server).
 # TravelU
-Live Demo - [Click here](https://travel-u.netlify.app/)
-
-Backend API service [Travel U Api](https://github.com/DorPlaut/TravelU-Server).
-
 
 Welcome to TravelU, a web-based travel application that helps users share and find their dream vacations.
 
