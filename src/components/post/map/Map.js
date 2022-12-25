@@ -14,8 +14,8 @@ function Map({ mapLocayion, locationName }) {
           bootstrapURLKeys={{
             key: process.env.REACT_APP_GOOGLE_KEY + '&libraries=places',
           }}
-          defaultCenter={defaultProps.center}
-          defaultZoom={defaultProps.zoom}
+          center={defaultProps.center}
+          zoom={defaultProps.zoom}
         >
           <LocationPin
             lat={mapLocayion.lat}

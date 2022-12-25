@@ -220,7 +220,7 @@ function WritePost() {
             <span className="single-input">
               <FaMapMarkedAlt /> :{' '}
               <Autocomplete
-                apiKey={process.env.REACT_APP_GOOGLE_KEY}
+                // apiKey={process.env.REACT_APP_GOOGLE_KEY}
                 onPlaceSelected={(place) => {
                   setMapLocation({
                     lat: place.geometry.location.lat(),
