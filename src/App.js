@@ -55,22 +55,21 @@ function App() {
     <>
       {isWritePost ? <WritePost /> : ''}
 
+      {isHomePage ? '' : <Navbar />}
       <ParallaxProvider>
-        {isHomePage ? '' : <Navbar />}
-
-        <div className="page">
-          <Header />
-          <BrightnesseBtn />
-          {fullUser ? (
-            <PostGrid />
-          ) : (
-            <div className="container">
-              <WelcomeMsg />
-            </div>
-          )}
-          <Footer />
-        </div>
+        <Header />
       </ParallaxProvider>
+      <div className="page">
+        <BrightnesseBtn />
+        {fullUser ? (
+          <PostGrid />
+        ) : (
+          <div className="container">
+            <WelcomeMsg />
+          </div>
+        )}
+        <Footer />
+      </div>
     </>
   );
 }

@@ -20,13 +20,13 @@ function Footer() {
         </a>
       </div>
       <div className="trees trees-footer">
-        <Parallax speed={-5}>
-          <img
-            src="./trees2.png"
-            alt=""
-            className={isDarkMode ? 'threes-dark image' : 'image'}
-          />
-        </Parallax>
+        {/* <Parallax speed={-5}> */}
+        <img
+          src="./trees2.png"
+          alt=""
+          className={isDarkMode ? 'threes-dark image' : 'image'}
+        />
+        {/* </Parallax> */}
       </div>
     </div>
   );
