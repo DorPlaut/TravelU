@@ -15,11 +15,13 @@ import WelcomeMsg from './components/WelcomeMsg';
 import PostGrid from './components/post/PostGrid';
 import WritePost from './components/post/WritePost';
 import Footer from './components/Footer';
+import LoadScreen from './components/LoadScreen';
 
 function App() {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   // redux
+  const isLoadingServer = useSelector((state) => state.isLoadingServer.value);
   const isHomePage = useSelector((state) => state.isHomePage.value);
   const isWritePost = useSelector((state) => state.isWritePost.value);
   const isMobile = useSelector((state) => state.isMobile.value);
@@ -53,6 +55,7 @@ function App() {
 
   return (
     <>
+      {isLoadingServer ? <LoadScreen /> : ''}
       {isWritePost ? <WritePost /> : ''}
 
       {isHomePage ? '' : <Navbar />}

@@ -769,6 +769,11 @@ textarea:active {
   z-index: 5;
   background: var(--shadowColor);
 }
+@media screen and (max-width: 800px) {
+  .load-screen {
+    font-size: 2rem;
+  }
+}
 
 .load-screen-massage {
   -webkit-animation: fade 1s linear forwards;
@@ -805,6 +810,11 @@ textarea:active {
 }
 .thanks p {
   margin-bottom: -4rem;
+}
+@media screen and (max-width: 800px) {
+  .thanks p {
+    margin-bottom: 0;
+  }
 }
 
 .image-gallery-icon {

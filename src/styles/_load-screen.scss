@@ -10,6 +10,10 @@
   color: var(--primaryColor);
   z-index: 5;
   background: var(--shadowColor);
+
+  @include mobile {
+    font-size: 2rem;
+  }
 }
 .load-screen-massage {
   animation: fade 1s linear forwards;
@@ -31,6 +35,9 @@
   margin-bottom: -10rem;
   p {
     margin-bottom: -4rem;
+    @include mobile {
+      margin-bottom: 0;
+    }
   }
   @include flexCenter(column);
 }
