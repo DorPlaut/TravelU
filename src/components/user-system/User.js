@@ -80,6 +80,8 @@ const User = () => {
   };
 
   useEffect(() => {
+    console.log('change');
+    dispacth(setIsLoading(true));
     if (isAuthenticated && user) {
       postUser()
         .then((res) => {
